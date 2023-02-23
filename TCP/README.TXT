@@ -1,16 +1,22 @@
-mTCP ReadMe
-2015-07-05 Version
+mTCP Overview
+2022-07-01 Version
 Michael Brutman (mbbrutman@gmail.com)
 
-Home page: http://www.brutman.com/mTCP/
+Home page: http://www.brutman.com/mTCP/mTCP.html
+
+PDF documentation is available from the home page.  Please
+download it!  (It is not included with the executables because small
+DOS machines generally can't read PDF files.)
+
 
 
 Welcome to mTCP!
 
-mTCP is a TCP/IP stack and applications designed to run well on older x86
+mTCP is a set of TCP/IP applications designed to run well on older x86
 personal computers running DOS.  Applications include:
 
  - DHCP.EXE, a DHCP client for simple network configuration
+ - DNSTEST.EXE, a DNS name resolver
  - FTP.EXE, an FTP client
  - FTPSRV.EXE, an FTP server
  - HTGET.EXE for fetching files from web servers
@@ -19,70 +25,122 @@ personal computers running DOS.  Applications include:
  - NC.EXE, a version of netcat for sending and receiving data using TCP/IP
  - PING.EXE, a network diagnostic utility
  - PKTTOOL.EXE, a utility (traffic sniffing and packet driver stats)
+ - SERVICES.BAT, a utility to check for mTCP updates
  - SNTP.EXE, a Simple Network Time Protocol client for synching your clock
  - SPDTEST.EXE, a program for benchmarking your TCP/IP network speed
  - TELNET.EXE, a Telnet client with reasonable good ANSI terminal emulation
 
 The TCP/IP code is compiled into each application allowing for each
 application to choose the features that they need.  This approach allows
-for better performance and per-application customization not possible
-with other approaches, such as a DOS TSR.
+for better performance, stability, and per-application customization
+not possible with other approaches, such as a DOS TSR.
 
-Documentation can be found online in PDF format at the mTCP home page.
-The PDF file is provided as a separate download because it is large and
-your chances of reading it on a PCjr are very low.
+Detailed end user documentation can be found in the mtcp.pdf file which
+you can download from the home page.
 
-Two sample configuration files are included:
+Included sample files are:
 
- - FTPPASS.TXT - a sample password file for the FTP server
- - SAMPLE.CFG  - a sample mTCP configuration file
+ - SAMPLE.CFG, a sample mTCP configuration file
+ - FTPPASS.TXT, a sample password file for the FTP server
 
 
-Getting setup
+Getting started
 
-Sorry, there is no quick start.  You are going to have to read the
-documentation.  Don't be scared though; once you go through setup once you
-don't have to do it again.  And it is not painful.
+The documention (mtcp.pdf) has a comprehensive set of instructions for
+setup.  Here is the very quick version:
 
-Here are the basic steps that you will go through:
-
-1. Load the packet driver for your Ethernet card.
-2. Create a configuration file.
-3. Set an environment variable (MTCPCFG) to point at the configuration file.
+1. Create an mTCP configuration file (a one-time process).
+2. Set an environment variable (MTCPCFG) to point at the configuration file.
+3. Load the packet driver for your Ethernet card.
 4. Run an mTCP program ...
 
 If you need a primer on packet drivers and network cards for DOS,
-start here: http://www.brutman.com/Dos_Networking/dos_networking.html .
+start here: http://www.brutman.com/Dos_Networking/dos_networking.html.
 
 
-Getting help
+Support 
 
-Don't understand the documentation?  That might be my fault - send me
+I want you to have a great experience with mTCP and I provide support
+via email.  Please send your questions and bug reports to me at
+mbbrutman@gmail.com.  There is also a low-volume mailing list you can
+subscribe to at https://groups.google.com/g/mtcp.
+
+The latest mTCP code and documentation can always be found at
+http://www.brutman.com/mTCP/mTCP.html.  This is the official
+homepage for mTCP; others locations may have mTCP available for
+download but I don't attempt to audit or verify those versions
+and they might be stale or have changes that I don't know about.
+
+If you are running an older version of mTCP please try the latest
+version first before contacting me; your problem might be a bug
+that has already been fixed.  The latest version is always available
+on the home page.  You can also use SERVICES.BAT to do a quick
+check from your DOS machine.
+
+Don't understand the documentation?  That might be my fault.  Send me
 an email with your question and I'll try to make it more clear.
 
 Can't make it work?  There could be lots of reasons.  I try to explain
-the common problems in the documentation.  If you have something
+the common problems in the PDF documentation.  If you have something
 that is truly uncommon and you are tired of banging your head on the
-wall, send me an email.  There might be a bug or you might just need
+wall send me an email.  There might be a bug or you might just need
 a gentle prod in the right direction.
 
-Have a suggestion for a new feature?  Have a comment?  Send an email too.
-I love email, especially from friendly, reasonable people such as yourself.
+If you do ask for help via email please send me the following:
+
+- the version of mTCP you are running.
+- the class/type of hardware you are running on. (e.g.: Compaq Portable,
+  PCjr, PS/2, DOSBox, generic Pentium, virtual machine, etc.)
+- the version of DOS you are using.
+- the details of your problem including what you think the problem is,
+  what server you are connecting to, how to recreate the problem, etc.
+
+If your problem is complex I may ask you to collect traces using the
+mTCP debug features.  Usually we can get to the bottom of the problem.
 
 
-Licensing and Copying
+Feature requests
+
+In addition to bugs I'm also open to suggestions for new features and
+new programs.
+
+If you are looking for enhancements to mTCP to support a commercial use
+please send me an email with what you are looking for.  I have never
+accepted any money, beer or cookies for my work, however I have added new
+features in exchange for a donation to an animal shelter.  (You get
+to choose the shelter.)
+
+
+Licensing
+
+This version (2022-07-01) of mTCP is available as open
+source software under the terms of the GNU General Public License
+version 3.  Please see COPYING.TXT which includes the terms of the
+license.
+
+In short, share and enjoy while respecting the license.  Although
+it is open source software I still maintain the copyright to all of
+my contributions.  As I retain my copyright I am able to offer other
+licenses; please contact me if you have a special project that requires
+a different license.
+
+The source code is available at http://www.brutman.com/mTCP/mTCP.html,
+which is the official home page for mTCP.  Other versions that you might
+see elsewhere on github, ibiblio, etc. are not official and are not
+contributed by me.  At some point I will upload the source to github under
+my account there as a backup to my personal web site, but for now the only
+blessed/verified/official source is at http://www.brutman.com/mTCP/mTCP.html.
+(I use SVN for my repository; it fits my workflow and the project needs
+well.)
 
 This version of mTCP is free to use.  There is no warranty of any kind.
 While I take pride in my work, this is a hobby project so if it burns
 down your house, causes an Martian invasion, or gives you indigestion I
-don't want to hear about it.
-
-You may copy this and pass it around freely.  Please distribute it in its
-original form though.
+will feel badly but I am not legally responsible.
 
 
+Comments or questions?  Email me at mbbrutman@gmail.com
 
-Would you like to know more? http://www.brutman.com/mTCP/
+Lastly, enjoy!
 
-(C)opyright Michael B. Brutman, mbbrutman@gmail.com
-
+-Mike
