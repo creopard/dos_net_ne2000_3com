@@ -1,0 +1,40 @@
+                        3Com (R) Corporation
+                     EtherDisk (R) Diskette for
+                 The 3C5X9 EtherLink III NIC Family
+                      Clarkson Packet Driver
+
+
+
+The EtherLink III family of NICs are all software configured.
+When the packet driver is loaded the only required command line
+parameter is the software interrupt value `PKT_INT_NUM.'  This
+software interrupt is used for communication between the driver and
+the protocol and should not be confused with the NIC's hardware
+interrupt.  As of version 1.09 of the Packet Driver Specification
+valid software interrupt values are in the range 0x60 to 0x80.
+
+The SLOT and IOBASE parameters are to be used only when there is
+more than one EtherLink III board in the machine.  This parameter
+indicates to the packet driver which NIC to use.  For NICs in ISA mode,
+use the IOBASE parameter.  On Microchannel NICs, EISA NICs, or ISA NICs
+in EISA mode, use the SLOT parameter.
+You cannot use both IOBASE and SLOT on the same command line.
+
+EXAMPLE:  You have two EtherLink III ISA NICs in your machine.
+One is installed at I/O Base 300 hex and the other at 320 hex.  To
+use the card located at 300 hex and load it at software interrupt
+60 hex for use in a Windows environment, use the command line:
+
+        3C5X9PD -w 0x60 IOBASE=0x300
+
+For a complete usage summary, enter 3C5X9PD at the DOS command prompt.
+
+
+ 3Com technical support for packet drivers can be contacted at:
+
+        Pkt_Support@3mail.3Com.com
+
+
+
+           (%VER PACKET.TXT - Packet Driver v5.0a)
+
