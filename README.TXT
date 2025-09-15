@@ -1,6 +1,6 @@
 This is a collection of drivers, programs and helper scripts for setting up 
 and using networking under DOS and/or DOSBox with a real or virtual 
-NE2000-compatible network card. 
+NE2000-compatible or 3com (ISA/PCI) network card. 
 
 All files herein can be found publicly on the internet. I hope this package
 will simplify installation and use, as it's a bit of a pain to do it from
@@ -32,10 +32,7 @@ to AUTOEXEC.BAT:
 -- snip --
 rem Network driver paths
 set NETPATH=C:\net
-set IPXPATH=%NETPATH%\ipx
-set TCPPATH=%NETPATH%\tcp
-set MTCPCFG=%TCPPATH%\mtcp.cfg
-set PATH=%PATH%;%NETPATH%;%TCPPATH%
+set PATH=%PATH%;%NETPATH%
 -- snip --
 
 The hardware configuration is specified in 3 files, not counting the [ne2000]
