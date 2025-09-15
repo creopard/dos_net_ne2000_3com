@@ -60,5 +60,3 @@ There are also a few problems. Contact me if you have any ideas!
 - After starting the IPX driver via STARTIPX.BAT, mtcp stops working. This
   has only beed tested on real hardware, as I can't get mtcp to work under 
   DOSBox.
-
-// gammy
